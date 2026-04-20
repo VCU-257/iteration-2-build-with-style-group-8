@@ -13,4 +13,4 @@ Yes I utilizewd AI for implementing the functionality.
 
 ## 3. Live Site Link
 *Provide the GitHub Pages link to the specific page(s) you built.*
-* **Live URL:** [Insert Link Here]
+* **Live URL:** https://vcu-257.github.io/iteration-2-build-with-style-group-8/ 
