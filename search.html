@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketplace</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/lux/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+
+  <style>
+.icon-btn {
+  background: transparent;
+  border: 2px solid transparent;
+  color: white;
+  padding: 6px 10px; /* gives the outline a nice box shape */
+  border-radius: 6px; /* optional */
+  transition: border-color 0.2s ease;
+  font-size: 2rem;
+}
+
+.icon-btn:hover {
+  border-color: white;
+  color: white;
+}
+  </style>
+</head>
+<body>
+
+<!-- 🔹 Navbar -->
+  <div class="container-fluid bg-primary" style="width: 100%;">
+    <div class="container py-3" style = "max-width: 100rem;">
+      <div class="d-flex align-items-center justify-content-between">
+
+        <!-- Left circle -->
+        <a href="index.html" class="navbar-brand text-white fw-bold fs-4 text-decoration-none">
+          BudgetBuilds
+        </a>
+      
+        <!-- Search -->
+        <input type="text" class="form-control mx-3 w-50 rounded" placeholder="Search">
+
+      
+        <!-- Right -->
+        <div class="d-flex gap-2 align-items-center">
+          <button class="btn btn-light rounded">Seller</button>
+          <a href="CheckOut.html">
+            <button class="btn icon-btn d-flex align-items-center gap-1" style="font-size: 1.7rem;">
+              <i class="bi bi-cart"></i>
+            </button>
+          </a>
+        
+          <a href="loginPage.html">
+            <button class="btn icon-btn d-flex align-items-center gap-1">
+              <i class="bi bi-person-fill"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <!-- 🔹 Main Layout -->
+  <div class="container" style = "max-width: 100rem;">
+    <div class="row">
+
+      <!-- 🔸 Sidebar -->
+      <div class="col-md-2 col-lg-2 bg-light p-4 border-end min-vh-100">
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle text-start w-100 bg-dark text-white rounded" 
+            type="button" 
+            data-bs-toggle="dropdown" 
+            aria-expanded="false">
+          Sort By
+          </button>
+
+          <ul class="dropdown-menu" style="width: 100%;">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else</a></li>
+          </ul>
+        </div>
+
+        <hr>
+
+        <!-- Categories -->
+        <h6 class="mb-2">Categories</h6>
+        <div>
+          <button class="btn btn-link p-0">All</button>
+        </div>
+        <div>
+          <button class="btn btn-link p-0">PC Parts</button>
+        </div>
+        <div>
+          <button class="btn btn-link p-0">Accessories</button>
+        </div>
+        <div>
+          <button class="btn btn-link p-0">Gaming Consoles</button>
+        </div>
+
+        <hr>
+        <h6 class="mb-2">Brands</h6>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox">
+          <label class="form-check-label">ASUS</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox">
+        <label class="form-check-label">MSI</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox">
+          <label class="form-check-label">Intel</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox">
+          <label class="form-check-label">NVIDIA</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox">
+          <label class="form-check-label">Corsair</label>
+        </div>
+        <div>
+          <button class="btn p-0 border-0 bg-transparent text-primary">
+            see all
+          </button>
+        </div>
+
+        <hr>
+        <h6 class="mb-2">Condition</h6>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox">
+          <label class="form-check-label">New</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox">
+          <label class="form-check-label">Used</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox">
+          <label class="form-check-label">Refurbished</label>
+        </div>
+        
+        <hr>
+        <h6 class="mb-2">Price</h6>
+        <div class="mb-4 d-flex gap-2">
+
+          <input class="form-control" placeholder="Min" style="max-width: 75px;">
+          <p class="my-auto">-</p>
+          <input class="form-control" placeholder="Max" style="max-width: 75px;">
+        </div>
+
+        <hr>
+        <h6 class="mb-2">Year Manufactured</h6>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox">
+          <label class="form-check-label">2026</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox">
+          <label class="form-check-label">2025</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox">
+          <label class="form-check-label">2024</label>
+        </div>
+        <div>
+          <button class="btn p-0 border-0 bg-transparent text-primary">
+            see all
+          </button>
+        </div>
+        <div class="d-grid gap-2 mt-4">
+          <button class="btn btn-secondary text-white bg-dark rounded"> More Filters</button>
+        </div>
+      </div>
+
+
+
+      <!-- 🔸 Product Grid -->
+      <div class="col-md-10 col-lg-10 p-5">
+        <div class="row g-4">
+
+          <!-- Card -->
+          <div class="col-md-4">
+            <div class="card bg-dark text-white rounded" style="height: 16rem;">
+              <div class="row g-0 h-100">
+      
+                <!-- Image (left) -->
+                <div class="col-6 h-100">
+                  <img src="defaultImage.jpg"
+                    class="img-fluid rounded-start h-100"
+                    style="object-fit: cover;">
+                </div>
+
+                <!-- Content (right) -->
+                <div class="col-6">
+                  <div class="card-body d-flex flex-column">
+                    <h6 class="card-title mb-1">Store Name</h6>
+                    <p class="text-muted mb-2">Item Title</p>
+                    <p class="fw-bold mb-2">$99.99</p>
+                    <p class="card-text small">Additional info...</p>
+                  </div>
+                </div>
+                <a href="Product Page.html" class="stretched-link"></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-dark text-white rounded" style="height: 16rem;">
+              <div class="row g-0 h-100">
+      
+                <!-- Image (left) -->
+                <div class="col-6 h-100">
+                  <img src="defaultImage.jpg"
+                    class="img-fluid h-100 rounded-start"
+                    style="object-fit: cover;">
+                </div>
+
+                <!-- Content (right) -->
+                <div class="col-6">
+                  <div class="card-body d-flex flex-column">
+                    <h6 class="card-title mb-1">Store Name</h6>
+                    <p class="text-muted mb-2">Item Title</p>
+                    <p class="fw-bold mb-2">$99.99</p>
+                    <p class="card-text small">Additional info...</p>
+                  </div>
+                </div>
+                <a href="Product Page.html" class="stretched-link"></a>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-dark text-white rounded" style="height: 16rem;">
+              <div class="row g-0 h-100">
+      
+                <!-- Image (left) -->
+                <div class="col-6 h-100">
+                  <img src="defaultImage.jpg"
+                    class="img-fluid h-100 rounded-start"
+                    style="object-fit: cover;">
+                </div>
+
+                <!-- Content (right) -->
+                <div class="col-6">
+                  <div class="card-body d-flex flex-column">
+                    <h6 class="card-title mb-1">Store Name</h6>
+                    <p class="text-muted mb-2">Item Title</p>
+                    <p class="fw-bold mb-2">$99.99</p>
+                    <p class="card-text small">Additional info...</p>
+                  </div>
+                </div>
+                <a href="Product Page.html" class="stretched-link"></a> 
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-dark text-white rounded" style="height: 16rem;">
+              <div class="row g-0 h-100">
+      
+                <!-- Image (left) -->
+                <div class="col-6 h-100">
+                  <img src="defaultImage.jpg"
+                    class="img-fluid h-100 rounded-start"
+                    style="object-fit: cover;">
+                </div>
+
+                <!-- Content (right) -->
+                <div class="col-6">
+                  <div class="card-body d-flex flex-column">
+                    <h6 class="card-title mb-1">Store Name</h6>
+                    <p class="text-muted mb-2">Item Title</p>
+                    <p class="fw-bold mb-2">$99.99</p>
+                    <p class="card-text small">Additional info...</p>
+                  </div>
+                </div>
+                <a href="Product Page.html" class="stretched-link"></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-dark text-white rounded" style="height: 16rem;">
+              <div class="row g-0 h-100">
+      
+                <!-- Image (left) -->
+                <div class="col-6 h-100">
+                  <img src="defaultImage.jpg"
+                    class="img-fluid h-100 rounded-start"
+                    style="object-fit: cover;">
+                </div>
+
+                <!-- Content (right) -->
+                <div class="col-6">
+                  <div class="card-body d-flex flex-column">
+                    <h6 class="card-title mb-1">Store Name</h6>
+                    <p class="text-muted mb-2">Item Title</p>
+                    <p class="fw-bold mb-2">$99.99</p>
+                    <p class="card-text small">Additional info...</p>
+                  </div>
+                </div>
+                <a href="Product Page.html" class="stretched-link"></a>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-dark text-white rounded" style="height: 16rem;">
+              <div class="row g-0 h-100">
+      
+                <!-- Image (left) -->
+                <div class="col-6 h-100">
+                  <img src="defaultImage.jpg"
+                    class="img-fluid h-100 rounded-start"
+                    style="object-fit: cover;">
+                </div>
+
+                <!-- Content (right) -->
+                <div class="col-6">
+                  <div class="card-body d-flex flex-column">
+                    <h6 class="card-title mb-1">Store Name</h6>
+                    <p class="text-muted mb-2">Item Title</p>
+                    <p class="fw-bold mb-2">$99.99</p>
+                    <p class="card-text small">Additional info...</p>
+                  </div>
+                </div>
+                <a href="Product Page.html" class="stretched-link"></a>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-md-4">
+            <div class="card bg-dark text-white rounded" style="height: 16rem;">
+              <div class="row g-0 h-100">
+      
+                <!-- Image (left) -->
+                <div class="col-6 h-100">
+                  <img src="defaultImage.jpg"
+                    class="img-fluid h-100 rounded-start"
+                    style="object-fit: cover;">
+                </div>
+
+                <!-- Content (right) -->
+                <div class="col-6">
+                  <div class="card-body d-flex flex-column">
+                    <h6 class="card-title mb-1">Store Name</h6>
+                    <p class="text-muted mb-2">Item Title</p>
+                    <p class="fw-bold mb-2">$99.99</p>
+                    <p class="card-text small">Additional info...</p>
+                  </div>
+                </div>
+                <a href="Product Page.html" class="stretched-link"></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-dark text-white rounded" style="height: 16rem;">
+              <div class="row g-0 h-100">
+      
+                <!-- Image (left) -->
+                <div class="col-6 h-100">
+                  <img src="defaultImage.jpg"
+                    class="img-fluid h-100 rounded-start"
+                    style="object-fit: cover;">
+                </div>
+
+                <!-- Content (right) -->
+                <div class="col-6">
+                  <div class="card-body d-flex flex-column">
+                    <h6 class="card-title mb-1">Store Name</h6>
+                    <p class="text-muted mb-2">Item Title</p>
+                    <p class="fw-bold mb-2">$99.99</p>
+                    <p class="card-text small">Additional info...</p>
+                  </div>
+                </div>
+                <a href="Product Page.html" class="stretched-link"></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card bg-dark text-white rounded" style="height: 16rem;">
+              <div class="row g-0 h-100">
+      
+                <!-- Image (left) -->
+                <div class="col-6 h-100">
+                  <img src="defaultImage.jpg"
+                    class="img-fluid h-100 rounded-start"
+                    style="object-fit: cover;">
+                </div>
+
+                <!-- Content (right) -->
+                <div class="col-6">
+                  <div class="card-body d-flex flex-column">
+                    <h6 class="card-title mb-1">Store Name</h6>
+                    <p class="text-muted mb-2">Item Title</p>
+                    <p class="fw-bold mb-2">$99.99</p>
+                    <p class="card-text small">Additional info...</p>
+                  </div>
+                </div>
+                <a href="Product Page.html" class="stretched-link"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
