@@ -116,26 +116,53 @@
 
                     <hr>
 
-                    <button type="submit" class="btn btn-primary">Confirm Purchase</button>
-                    <a href="product.html" class="btn btn-secondary">Back</a>
+                    <a href="index.html" class="btn btn-primary" onclick="clearCart()">Confirm Purchase</a>
+                    <a href="index.html" class="btn btn-secondary">Back</a>
 
                 </form>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-4" id="cart-items">
                 <h5>Order Summary</h5>
-                <p>EVGA RTX 3070 FTW3 Ultra</p>
-                <p>Qty: 1</p>
-                <p>Subtotal: $285.00</p>
-                <p>Shipping: $5.99</p>
-                <p>Tax: $17.10</p>
                 <hr>
-                <p><strong>Total: $308.09</strong></p>
+                
             </div>
         </div>
 
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+            const container = document.getElementById("cart-items");
+            let total = 0;
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                container.innerHTML += `
+                <div class="mb-5">
+                    <h5>${item.title}</h5>
+                    <p>Qty: ${item.quantity}</p>
+                    <p>Subtotal: $${(item.price * item.quantity).toFixed(2)}</p>
+                </div>
+                <hr>
+                `;
+            });
+            total += total * 0.05; // Shipping
+            total += total * 0.08; // Tax
+            container.innerHTML += `
+                <p>Shipping: $${(total * 0.05).toFixed(2)}</p>
+                <p>Tax: $${(total * 0.08).toFixed(2)}</p>
+                <hr>
+                <p><strong>Total: $${total.toFixed(2)}</strong></p>
+            `;
+        }
+        loadCart();   
+
+        function clearCart() {
+            localStorage.removeItem("cart");
+        }
+    </script>
 </body>
 </html>

@@ -100,8 +100,8 @@
                     <tr><th>VRAM</th><td>8 GB GDDR6</td></tr>
                 </table>
 
-                <a href="checkout.html" class="btn btn-primary rounded">Buy Now</a>
-                <button class="btn btn-secondary border-primary rounded border-1">Add to Cart</button>
+                <a href="checkout.html" class="btn btn-primary rounded" id="buyNowBtn">Buy Now</a>
+                <button class="btn btn-secondary border-primary rounded border-1" id="addToCartBtn">Add to Cart</button>
             </div>
         </div>
 
@@ -191,7 +191,19 @@ document.getElementById("searchForm").addEventListener("submit", function (e) {
     window.location.href = `search.html?q=${encodeURIComponent(query)}`;
   }
 });
+function addToCart(listing) {
+  // Get current cart (or empty array)
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let existing = cart.find(item => item.id === listing.id);
+  if (existing) {
+    existing.quantity += listing.quantity;
+  } else {
+    cart.push(listing);
+  }
 
+  // Save back to localStorage
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 const API_URL = "https://opensheet.elk.sh/15gKvlDsyXkH9jaqJ5TQDlNlIa64D1ZCRTs2knwMVqN0/Sheet1";
@@ -222,7 +234,33 @@ fetch(API_URL)
 
     // Image
     document.getElementById("mainImg").src = item.img;
+
+    const btn = document.getElementById("addToCartBtn");
+    btn.onclick = function() {
+        addToCart({
+            id: item.id,
+            title: item.title,
+            price: item.price,
+            quantity: 1
+        });
+        alert("Added to cart!");
+    };
+
+    const buyBtn = document.getElementById("buyNowBtn");
+    buyBtn.onclick = function() {
+        addToCart({
+            id: item.id,
+            title: item.title,
+            price: item.price,
+            quantity: 1
+        });
+        buyBtn.style.backgroundColor = "rgb(94, 145, 255)";
+    };
   });
+
+
+
+
 </script>
 </body>
 </html>
