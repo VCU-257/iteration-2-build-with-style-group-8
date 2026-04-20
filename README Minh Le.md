@@ -16,4 +16,4 @@ Based on Table 6 in GA8, my assigned styling task was to add Bootstrap Icons to 
 
 ## 3. Live Site Link
 
-* **Live URL:** 
+* **Live URL:** https://vcu-257.github.io/iteration-2-build-with-style-group-8/
